@@ -28,14 +28,18 @@ ASM은 자바 바이트 코드를 분석하고 다루는 스프링 프레임워�
 
 자세한 내용은 다음 링크를 참고해주세요.
 
-[ASM] (https://www.roseindia.net/spring/spring3/spring-3-asm.shtml, "Spring ASM link")
+```
+ASM 참고 (https://www.roseindia.net/spring/spring3/spring-3-asm.shtml)
+```
 - - -
 
 **해당 내용은 IntelliJ IDEA를 기준으로 설정합니다.**
 
 * Java 14 preview feature를 사용하기 위해서는 `IntelliJ의 얼리엑세스(Early Access Program)`버전이 필요합니다.
 
-[IntelliJ EAP] (https://www.jetbrains.com/ko-kr/resources/eap/, "IntelliJ EAP link")
+```
+IntelliJ EAP 설치 (https://www.jetbrains.com/ko-kr/resources/eap/)
+```
 
 1. JDK는 OpenJDK 14버전을 필요로 합니다.
 
@@ -45,6 +49,8 @@ ASM은 자바 바이트 코드를 분석하고 다루는 스프링 프레임워�
 
 4. `File → Project Structure → Project Settings → Project → Project Language Level`을 `'14 (Preview) - Records, patterns, text blocks'` 항목으로 선택합니다.
 
-[Java 14 Preview Feature 참고] (https://openjdk.java.net/projects/jdk/14/, "Java 14 Preview Feature link")
+```
+Java 14 Preview Feature 참고 (https://openjdk.java.net/projects/jdk/14/)
 
-[Spring MVC 참고] (https://youtu.be/mr-7kGy8Yao, "youtube link")
+Java 14 Preview Feature & Spring MVC 참고 (https://youtu.be/mr-7kGy8Yao)
+```
