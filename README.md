@@ -6,7 +6,7 @@
 
 ### 들어가기에 앞서
 
-Java 14에 추가된 feature 중 *기능에 관련된 항목*만을 설명합니다. (`GC`와 관련된 내용이나 `제거된 패키지`들에 대한 내용은 다루지 않습니다.)
+Java 14에 추가된 feature 중 기능에 관련된 항목만을 설명합니다. (`GC`와 관련된 내용이나 `제거된 패키지`들에 대한 내용은 다루지 않습니다.)
 
 - records (Preview)
 
@@ -16,7 +16,7 @@ Java 14에 추가된 feature 중 *기능에 관련된 항목*만을 설명합니
         
         - `Spring Boot 2.3.0.M3`버전에서 정의된 의존성 중 `Spring Framework 5.2.4.RELEASE` 버전을 사용할 경우 `java.lang.UnsupportedOperationException` 예외가 발생합니다.
         
-            - 이는 *ASM 라이브러리 버전 업데이트로 인한 호환성 이슈로, `Spring Framework`의 버전을 `5.2.3.RELEASE로 다운그레이드`를 진행해야 records 기능을 사용할 수 있습니다. 
+            - 이는 *ASM 라이브러리 버전 업데이트로 인한 호환성 이슈로, `Spring Framework`의 버전을 `5.2.3.RELEASE로 패치버전 다운그레이드`를 진행해야 records 기능을 사용할 수 있습니다. 
 
 - Switch Expressions (Standard)
 
