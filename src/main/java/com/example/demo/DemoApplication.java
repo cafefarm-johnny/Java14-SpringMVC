@@ -1,5 +1,11 @@
 package com.example.demo;
 
+import com.example.demo.pm.PatternMatching;
+import com.example.demo.pm.item.Glove;
+import com.example.demo.pm.item.HairBand;
+import com.example.demo.pm.item.Shoes;
+import com.example.demo.sw.SwitchExpressions;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
@@ -14,7 +20,6 @@ import org.springframework.stereotype.Service;
 
 import java.sql.Types;
 import java.util.List;
-import java.util.Random;
 
 /**
  * JAVA 14 신규 구조 기능을 사용하려면 IDEA를 EAP(Early Access) 버전으로 설치해야 Java 14 Preview-Feature를 사용할 수 있다.
@@ -24,58 +29,19 @@ public class DemoApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
+
+        // switch
+        var sw = new SwitchExpressions();
+        sw.run();
+
+        // pattern matching
+        var pm = new PatternMatching();
+        System.out.println("shoes size : " + pm.compute(new Shoes(265)));
+        System.out.println("glove size : " + pm.compute(new Glove(10)));
+        System.out.println("hair band size : " + pm.compute(new HairBand(55)));
     }
 
 }
-
-class SwitchStudy {
-    public void run() {
-        var random = new Random().nextInt(6);
-
-        // yield 구문은 변수에 할당하는 switch 표현식에 사용된다. (Return해야 할 데이터가 있는 switch 표현식으로 사용하는 경우)
-        var result = switch (random) {
-            case 1, 2, 3, 4, 5:
-                yield random;
-            default:
-                yield "default";
-        };
-
-        System.out.println("yield 패턴 : " + result);
-
-        // Arrow는 void를 Return하는 switch 표현식에 사용된다.
-        switch (random) {
-            case 1, 2, 3, 4, 5 -> System.out.println("Arrow 패턴 : " + random);
-            default -> System.out.println("Arrow 패턴 : default");
-        }
-    }
-}
-
-
-class Shoes {
-    public int size;
-    public Shoes(int size) {
-        this.size = size;
-    }
-}
-
-class Glove {
-    public int size;
-    public Glove(int size) {
-        this.size = size;
-    }
-}
-
-class PatternMatchingStudy {
-    public int compute(Object equipment) {
-        if (equipment instanceof Shoes shoes) {
-            return shoes.size;
-        } else if (equipment instanceof Glove glove) {
-            return glove.size;
-        }
-        throw new IllegalArgumentException("장비 타입을 알 수 없습니다.");
-    }
-}
-
 
 @Component
 class Runner {
@@ -86,17 +52,8 @@ class Runner {
         this.service = service;
     }
 
-    @EventListener(ApplicationReadyEvent.class)
-    public void exercise() throws Exception {
-        // switch
-        var sw = new SwitchStudy();
-        sw.run();
-
-        // pattern matching
-        var pm = new PatternMatchingStudy();
-        System.out.println("shoes size : " + pm.compute(new Shoes(265)));
-        System.out.println("glove size : " + pm.compute(new Glove(10)));
-
+    @EventListener(ApplicationReadyEvent.class) // EventListener 등장 이전에는 ApplicationListner 인터페이스를 상속하여 onApplicationEvent 메소드를 오버라이딩하여 구현했다 (Spring 4.2 이전)
+    public void onApplicationEventHandler() throws Exception {
         // Create
         var johnny = this.service.create("johnny", EmotionalState.NEUTRAL);
         System.out.println(johnny);
@@ -107,10 +64,11 @@ class Runner {
         System.out.println("found by id : " + findJohnny);
 
         // throw IllegalArgumentException
-        var blank = this.service.create("j", EmotionalState.HAPPY); // compact constructor
-        System.out.println(blank);
+//        var blank = this.service.create("j", EmotionalState.HAPPY); // compact constructor
+//        System.out.println(blank);
     }
 }
+
 //@Data
 //@AllArgsConstructor
 //@NoArgsConstructor
