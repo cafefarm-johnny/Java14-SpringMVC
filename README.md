@@ -59,9 +59,9 @@ Java 14 Preview Feature & Spring MVC 참고 (https://youtu.be/mr-7kGy8Yao)
     <br>
     **원인)**
     <br>
-    record는 멤버변수들을 생성할 때 `상수로 선언되기 때문에 인자 없는 생성자를 정의할 수 없습니다.`
+    record는 멤버변수들을 생성할 때 `상수로 선언되기 때문에 기본 생성자를 정의할 수 없습니다.`
     <br>
-    반면 ObjectMapper의 convertValue() 메소드는 `인자 없는 생성자를 요구`하기 때문에 복사를 수행할 수가 없습니다.
+    반면 ObjectMapper의 convertValue() 메소드는 `기본 생성자를 요구`하기 때문에 복사를 수행할 수가 없습니다.
         
     - `Spring Boot 2.3.0.M3`버전에 정의된 자식 의존성 중 `Spring Framework 5.2.4.RELEASE` 버전을 사용할 경우 
     `java.lang.UnsupportedOperationException` 예외가 발생합니다.
