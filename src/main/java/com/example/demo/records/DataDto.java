@@ -42,5 +42,9 @@ public class DataDto {
                 ", age=" + age +
                 '}';
     }
-    // 1 ~ 2분으로 이해하기 위해 읽은 코드라인은 무려 '23'라인이다.
+    // 1 ~ 2분으로 이해하기 위해 읽은 코드라인은 무려 '23'라인이다.'
+
+    public String toUpperName() {
+        return this.name.toUpperCase();
+    }
 }
