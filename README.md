@@ -20,9 +20,7 @@ Java 14에 추가된 feature 중 기능에 관련된 항목만을 설명합니�
 
 * Java 14를 사용하기 위해서는 `IntelliJ의 얼리엑세스(Early Access Program)`버전이 필요합니다.
 
-```
-IntelliJ EAP 설치 (https://www.jetbrains.com/ko-kr/resources/eap/)
-```
+>>> IntelliJ EAP 설치 (<a href="https://www.jetbrains.com/ko-kr/resources/eap/">링크</a>)
 
 1. JDK는 OpenJDK 14버전을 필요로 합니다.
 
@@ -33,9 +31,7 @@ IntelliJ EAP 설치 (https://www.jetbrains.com/ko-kr/resources/eap/)
 4. `File → Project Structure → Project Settings → Project → Project Language Level`을 
 `'14 (Preview) - Records, patterns, text blocks'` 항목으로 선택합니다.
 
-```
-Java 14 Preview Feature & Spring MVC 참고 (https://youtu.be/mr-7kGy8Yao)
-```
+>>> Java 14 Preview Feature & Spring MVC 참고 (<a href="https://youtu.be/mr-7kGy8Yao">링크</a>)
 
 - - -
 
@@ -48,7 +44,7 @@ Java 14 Preview Feature & Spring MVC 참고 (https://youtu.be/mr-7kGy8Yao)
     <br>
     <strong>원인</strong>
     <br>
-    Jackson은 프로퍼티 기반으로 동작하는데, `getters를 기반으로 프로퍼티를 얻습니다.` 
+    Jackson은 프로퍼티 기반으로 동작하는데, `getters를 기반`으로 프로퍼티를 얻습니다. 
     <br>
     getters 정의를 record로 전가하는 경우 `메소드 네이밍 컨벤션에 get이라는 키워드가 누락되어 프로퍼티를 얻어내는데 실패`합니다.
     <br>
@@ -81,9 +77,8 @@ Java 14 Preview Feature & Spring MVC 참고 (https://youtu.be/mr-7kGy8Yao)
 
 ASM은 자바 바이트 코드를 분석하고 다루는 라이브러리이며, 스프링 프레임워크에 포함되어 있습니다.
 
-```
-ASM 참고 (https://www.roseindia.net/spring/spring3/spring-3-asm.shtml)
-```
+>>> ASM 참고 (<a href="https://www.roseindia.net/spring/spring3/spring-3-asm.shtml">링크</a>)
+
 
 - Switch Expressions (Standard)
 
