@@ -56,6 +56,7 @@ Java 14 Preview Feature & Spring MVC 참고 (https://youtu.be/mr-7kGy8Yao)
     <br>
     다른 방법으로는 `메소드 네이밍에 get`이 들어가도록 getters를 직접 정의하여 문제를 우회할 수 있습니다.
     
+
     - ObjectMapper를 이용해 `Object to record 간 값 복사를 시도하는 경우 에러가 발생`합니다.
     <img src="./img/(ObjectMapper)InvalidDefinitionException.png">
     <br>
@@ -67,6 +68,7 @@ Java 14 Preview Feature & Spring MVC 참고 (https://youtu.be/mr-7kGy8Yao)
     <br>
     이러한 문제는 record의 `멤버변수들에 프로퍼티 선언을 하거나(@JsonProperty) 객체의 매핑 법칙을 변경하여(@JsonAutoDetect)` 해결할 수 있습니다.
         
+
     - `Spring Boot 2.3.0.M3`버전에 정의된 자식 의존성 중 `Spring Framework 5.2.4.RELEASE` 버전을 사용할 경우 에러가 발생합니다.
     <img src="./img/UnsupportedOperationException.png">
     <br.
@@ -84,5 +86,7 @@ ASM 참고 (https://www.roseindia.net/spring/spring3/spring-3-asm.shtml)
 ```
 
 - Switch Expressions (Standard)
+
+    - 발견된 바 없음
 
 - Text Blocks (Second Preview)
